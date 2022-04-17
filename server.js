@@ -6,6 +6,11 @@ const app = express();
 // Connect Database
 connectDB();
 
+// Initialize Middle Ware 
+app.use(express.json({ extended:false}))
+
+
+
 app.get('/',(req, res) => res.send('Api Running'))
 
 
