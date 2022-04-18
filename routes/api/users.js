@@ -64,7 +64,7 @@ router.post('/', [
         const payload = {
             user: {
                 id: user.id,       //its mean mongodb id which assign is user._id
-            }
+            },
         };
 
         jwt.sign(
@@ -73,12 +73,12 @@ router.post('/', [
             { expiresIn: 360000 },      //optional
             (err, token) => {           //call back which send error if error token if not error
                 if (err) throw err;
-                res.json({ token });
+                res.send({ token });
 
             }
         )
 
-        res.send("User Register")
+        // res.send("User Register")
     }
     catch (err) {
         console.error(err.message)
